@@ -1,2 +1,2 @@
-const server = require('./app');
-const socket = require('./socket');
+require('./app');
+require('./socket');

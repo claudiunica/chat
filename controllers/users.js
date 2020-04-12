@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { connectedUsers, generateUserId } = require('../socket');
+const { connectedUsers } = require('../socket');
 const User = require('../models/User');
 
 router.get('/register', function checkInput(req, res) {
@@ -15,8 +15,8 @@ router.get('/register', function checkInput(req, res) {
         res.status(409).send('User already exists');
         return;
     }
-    const id = generateUserId();
-    connectedUsers.push(new User(id, { nickname, firstName, lastName, email }));
+    // const id = generateUserId();
+    // connectedUsers.push(new User(id, { nickname, firstName, lastName, email }));
     res.send({
         message: `User registered`
     });
